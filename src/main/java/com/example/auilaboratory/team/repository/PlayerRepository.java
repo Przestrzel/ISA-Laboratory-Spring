@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Optional;
 
+@org.springframework.stereotype.Repository
 public class PlayerRepository implements Repository<Player, String> {
     private DataStore dataStore;
 
@@ -22,7 +23,7 @@ public class PlayerRepository implements Repository<Player, String> {
     }
 
     @Override
-    public List<Player> findAllObjects() {
+    public List<Player> findAll() {
         return dataStore.findAllPlayers();
     }
 

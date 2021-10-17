@@ -6,7 +6,7 @@ import java.util.Optional;
 public interface Repository<Entity, Key> {
     Optional<Entity> find(Key pk);
 
-    List<Entity> findAllObjects();
+    List<Entity> findAll();
 
     void save(Entity e);
 

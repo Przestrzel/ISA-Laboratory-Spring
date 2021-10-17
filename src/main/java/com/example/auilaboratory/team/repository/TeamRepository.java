@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Optional;
 
+@org.springframework.stereotype.Repository
 public class TeamRepository implements Repository<Team, String> {
     private DataStore dataStore;
 
@@ -22,7 +23,7 @@ public class TeamRepository implements Repository<Team, String> {
     }
 
     @Override
-    public List<Team> findAllObjects() {
+    public List<Team> findAll() {
         return dataStore.findAllTeams();
     }
 
