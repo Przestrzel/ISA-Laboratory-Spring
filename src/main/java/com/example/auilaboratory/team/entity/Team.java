@@ -1,9 +1,8 @@
-package com.example.auilaboratory.team;
+package com.example.auilaboratory.team.entity;
 
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -13,6 +12,10 @@ import java.util.List;
 @EqualsAndHashCode
 @ToString
 public class Team implements Serializable {
+
+    /**
+     * Name of the team is unique.
+     */
     private String name;
 
     private double budget;

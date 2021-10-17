@@ -8,7 +8,9 @@ import java.util.logging.Level;
 @Log
 public class Cloning {
 
-    //*Code from the lecture for deep cloning*.
+    /**
+     * Code from the lecture for deep cloning.
+     * */
     @SuppressWarnings("unchecked")
     public static <T extends Serializable> T clone(T object) {
         try {

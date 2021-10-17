@@ -1,4 +1,4 @@
-package com.example.auilaboratory.team;
+package com.example.auilaboratory.team.entity;
 
 import lombok.*;
 
@@ -12,6 +12,9 @@ import java.io.Serializable;
 @ToString
 public class Player implements Serializable {
 
+    /**
+     * Full name is unique in my system.
+     */
     private String fullName;
 
     private int age;
@@ -22,7 +25,7 @@ public class Player implements Serializable {
 
     /**
      * Position on which player do play. for example: Striker, Goalkeeper;
-     * */
+     */
     private String position;
 
     private double value;
