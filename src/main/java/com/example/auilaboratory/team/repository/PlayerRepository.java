@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Optional;
 
-public class RepositoryPlayer implements Repository<Player, String> {
+public class PlayerRepository implements Repository<Player, String> {
     private DataStore dataStore;
 
     @Autowired
-    public RepositoryPlayer(DataStore dataStore) {
+    public PlayerRepository(DataStore dataStore) {
         this.dataStore = dataStore;
     }
 

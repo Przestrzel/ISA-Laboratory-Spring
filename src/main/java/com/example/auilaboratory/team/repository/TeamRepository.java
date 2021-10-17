@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Optional;
 
-public class RepositoryTeam implements Repository<Team, String> {
+public class TeamRepository implements Repository<Team, String> {
     private DataStore dataStore;
 
     @Autowired
-    public RepositoryTeam(DataStore dataStore) {
+    public TeamRepository(DataStore dataStore) {
         this.dataStore = dataStore;
     }
 
