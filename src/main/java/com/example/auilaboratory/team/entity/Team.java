@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @SuperBuilder
 @NoArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "name")
 @ToString
 public class Team implements Serializable {
 

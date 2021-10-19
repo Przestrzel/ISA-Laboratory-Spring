@@ -4,19 +4,18 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 @Getter
 @Setter
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
+@EqualsAndHashCode(of = "id")
 public class Player implements Serializable {
 
-    /**
-     * Full name is unique in my system. *Change to UUID*
-     */
+    private final UUID id = UUID.randomUUID();
+
     private String fullName;
 
     private int age;
@@ -44,4 +43,17 @@ public class Player implements Serializable {
      * Team that player belongs to
      */
     private Team team;
+
+    @Override
+    public String toString() {
+        return '\n' + "Player {" +
+                "fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", position='" + position + '\'' +
+                ", value=" + value +
+                ", nationality='" + nationality + '\'' +
+                '}';
+    }
 }
