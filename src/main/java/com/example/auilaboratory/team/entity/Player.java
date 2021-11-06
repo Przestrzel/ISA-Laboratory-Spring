@@ -54,6 +54,6 @@ public class Player implements Serializable {
                 ", position='" + position + '\'' +
                 ", value=" + value +
                 ", nationality='" + nationality + '\'' +
-                '}';
+                ", team='" + team.getName() + '\'' +'}';
     }
 }

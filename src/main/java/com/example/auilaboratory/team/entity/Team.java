@@ -12,7 +12,6 @@ import java.util.List;
 @SuperBuilder
 @NoArgsConstructor
 @EqualsAndHashCode(of = "name")
-@ToString
 public class Team implements Serializable {
 
     /**
@@ -23,4 +22,9 @@ public class Team implements Serializable {
     private double budget;
 
     private List<Player> players;
+
+    @Override
+    public String toString() {
+        return '\n' + "Team: " + name + " | budget: " + budget;
+    }
 }
