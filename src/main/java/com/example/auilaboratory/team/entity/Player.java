@@ -3,6 +3,7 @@ package com.example.auilaboratory.team.entity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -12,10 +13,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
+@Entity
+@Table(name="players")
 public class Player implements Serializable {
 
+    @Id
     private final UUID id = UUID.randomUUID();
 
+    @Column(name="full_name")
     private String fullName;
 
     private int age;
@@ -42,6 +47,8 @@ public class Player implements Serializable {
     /**
      * Team that player belongs to
      */
+    @ManyToOne
+    @JoinColumn(name = "team")
     private Team team;
 
     @Override
