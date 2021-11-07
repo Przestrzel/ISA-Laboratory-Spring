@@ -5,6 +5,7 @@ import com.example.auilaboratory.team.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,17 +19,19 @@ public class TeamService {
     }
 
     public Optional<Team> find(String name) {
-        return repository.find(name);
+        return repository.findByName(name);
     }
 
     public List<Team> findAll() {
         return repository.findAll();
     }
 
+    @Transactional
     public void save(Team team) {
         repository.save(team);
     }
 
+    @Transactional
     public void delete(Team e) {
         repository.delete(e);
     }

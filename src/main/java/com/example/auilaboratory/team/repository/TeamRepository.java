@@ -1,39 +1,15 @@
 package com.example.auilaboratory.team.repository;
 
-import com.example.auilaboratory.datastore.DataStore;
-import com.example.auilaboratory.repository.Repository;
 import com.example.auilaboratory.team.entity.Team;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @org.springframework.stereotype.Repository
-public class TeamRepository implements Repository<Team, String> {
-    private DataStore dataStore;
+public interface TeamRepository extends JpaRepository<Team, String> {
 
-    @Autowired
-    public TeamRepository(DataStore dataStore) {
-        this.dataStore = dataStore;
-    }
+    Optional<Team> findByName(String name);
 
-    @Override
-    public Optional<Team> find(String name) {
-        return dataStore.findTeam(name);
-    }
-
-    @Override
-    public List<Team> findAll() {
-        return dataStore.findAllTeams();
-    }
-
-    @Override
-    public void save(Team team) {
-        dataStore.createTeam(team);
-    }
-
-    @Override
-    public void delete(Team e) {
-        dataStore.deleteTeam(e);
-    }
+    List<Team> findAll();
 }
