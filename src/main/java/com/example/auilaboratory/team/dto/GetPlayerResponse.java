@@ -19,17 +19,17 @@ public class GetPlayerResponse {
 
     private String fullName;
 
-    private int age;
-
-    private double height;
-
-    private double weight;
-
-    private String position;
-
-    private double value;
-
-    private String nationality;
+//    private int age;
+//
+//    private double height;
+//
+//    private double weight;
+//
+//    private String position;
+//
+//    private double value;
+//
+//    private String nationality;
 
     private String teamName;
 
@@ -37,12 +37,6 @@ public class GetPlayerResponse {
         return player -> GetPlayerResponse.builder()
                 .id(player.getId())
                 .fullName(player.getFullName())
-                .age(player.getAge())
-                .height(player.getHeight())
-                .weight(player.getWeight())
-                .position(player.getPosition())
-                .value(player.getValue())
-                .nationality(player.getNationality())
                 .teamName(player.getTeam().getName())
                 .build();
     }

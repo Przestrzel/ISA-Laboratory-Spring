@@ -17,12 +17,11 @@ public class GetTeamResponse {
 
     private String name;
 
-    private double budget;
+//    private double budget;
 
     public static Function<Team, GetTeamResponse> entityToDtoMapper() {
         return team -> GetTeamResponse.builder()
                 .name(team.getName())
-                .budget(team.getBudget())
                 .build();
     }
 }
