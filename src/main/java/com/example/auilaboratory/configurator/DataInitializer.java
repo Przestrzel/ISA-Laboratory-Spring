@@ -117,15 +117,14 @@ public class DataInitializer {
         secondTeamPlayers.add(david);
 
         Team firstTeam = Team.builder().name("First team").budget(74_000_000).players(firstTeamPlayers).build();
+        teamService.save(firstTeam);
         Team secondTeam = Team.builder().name("Second team").budget(89_400_000).players(secondTeamPlayers).build();
+        teamService.save(secondTeam);
 
         firstTeamPlayers.stream().forEach(player -> player.setTeam(firstTeam));
         secondTeamPlayers.stream().forEach(player -> player.setTeam(secondTeam));
 
         firstTeamPlayers.stream().forEach(player -> playerService.save(player));
         secondTeamPlayers.stream().forEach(player -> playerService.save(player));
-
-        teamService.save(firstTeam);
-        teamService.save(secondTeam);
     }
 }

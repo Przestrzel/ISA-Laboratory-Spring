@@ -14,13 +14,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Entity
-@Table(name="players")
+@Table(name = "players")
 public class Player implements Serializable {
 
     @Id
     private final UUID id = UUID.randomUUID();
 
-    @Column(name="full_name")
+    @Column(name = "full_name")
     private String fullName;
 
     private int age;

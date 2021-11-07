@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "name")
 @Entity
-@Table(name="teams")
+@Table(name = "teams")
 public class Team implements Serializable {
 
     /**
