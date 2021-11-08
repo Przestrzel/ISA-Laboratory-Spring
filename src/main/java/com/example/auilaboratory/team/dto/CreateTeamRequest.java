@@ -4,6 +4,7 @@ import com.example.auilaboratory.team.entity.Player;
 import com.example.auilaboratory.team.entity.Team;
 import lombok.*;
 
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -23,6 +24,7 @@ public class CreateTeamRequest {
         return request -> Team.builder()
                 .name(request.getName())
                 .budget(request.getBudget())
+                .players(List.of())
                 .build();
     }
 }

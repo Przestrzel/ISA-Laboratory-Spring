@@ -11,11 +11,11 @@ Content-Type: application/json
 
 {
   "fullName": "Andrzej",
-  "age": "20",
-  "height": "1.85",
-  "weight": "80",
+  "age": 20,
+  "height": 1.85,
+  "weight": 80,
   "position": "Striker",
-  "value": "828282",
+  "value": 828282,
   "nationality": "Poland",
   "teamName": "First team"
 }
@@ -30,10 +30,10 @@ PUT http://localhost:8080/api/players/cca2a08c-9c7e-494b-abe3-743b52e4f585
 Content-Type: application/json
 
 {
-  "fullName": "Andrzej222",
-  "age": "40",
+  "fullName": "Andrzej Dodany",
+  "age": 40,
   "position": "Midfielder",
-  "value": "444222",
+  "value": 444222,
   "nationality": "Poland"
 }
 
@@ -70,26 +70,26 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/api/teams/First team/players
+GET http://localhost:8080/api/teams/NewTeam/players
 
 ###
 
-GET http://localhost:8080/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
+GET http://localhost:8080/api/teams/NewTeam/players/f833347f-243e-4e46-8f43-5364acae615f
 
 ###
 
-POST http://localhost:8080/api/teams/First team/players
+POST http://localhost:8080/api/teams/NewTeam/players
 Content-Type: application/json
 
 {
   "fullName": "Andrzej",
-  "age": "20",
-  "height": "1.85",
-  "weight": "80",
+  "age": 20,
+  "height": 1.85,
+  "weight": 80,
   "position": "Striker",
-  "value": "828282",
+  "value": 828282,
   "nationality": "Poland",
-  "teamName": "First team"
+  "teamName": "NewTeam"
 }
 
 ###
@@ -103,8 +103,8 @@ Content-Type: application/json
 
 {
   "fullName": "Andrzej Jakis",
-  "age": "40",
+  "age": 40,
   "position": "Midfielder",
-  "value": "444222",
+  "value": 444222,
   "nationality": "Poland"
 }
