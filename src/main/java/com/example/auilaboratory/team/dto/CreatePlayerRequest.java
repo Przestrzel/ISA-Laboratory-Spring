@@ -29,9 +29,9 @@ public class CreatePlayerRequest {
 
     private String nationality;
 
-    private Team team;
+    private String teamName;
 
-    public static Function<CreatePlayerRequest, Player> dtoToEntityMapper(Supplier<Team> teamSupplier){
+    public static Function<CreatePlayerRequest, Player> dtoToEntityMapper(Function<String, Team> teamFunction){
         return request -> Player.builder()
                 .fullName(request.getFullName())
                 .age(request.getAge())
@@ -40,7 +40,7 @@ public class CreatePlayerRequest {
                 .position(request.getPosition())
                 .value(request.getValue())
                 .nationality(request.getNationality())
-                .team(teamSupplier.get())
+                .team(teamFunction.apply(request.getTeamName()))
                 .build();
     }
 }

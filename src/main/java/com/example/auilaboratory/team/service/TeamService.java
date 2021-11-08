@@ -27,13 +27,18 @@ public class TeamService {
     }
 
     @Transactional
-    public void save(Team team) {
-        repository.save(team);
+    public Team save(Team team) {
+        return repository.save(team);
     }
 
     @Transactional
-    public void delete(Team e) {
-        repository.delete(e);
+    public void delete(Team team) {
+        repository.delete(team);
+    }
+
+    @Transactional
+    public void update(Team team) {
+        repository.save(team);
     }
 }
 

@@ -6,7 +6,7 @@ import com.example.auilaboratory.team.entity.Team;
 import lombok.*;
 
 import java.util.function.BiFunction;
-
+    //List of players to update
 @Getter
 @Setter
 @Builder
@@ -17,8 +17,6 @@ import java.util.function.BiFunction;
 public class UpdateTeamRequest {
 
     private double budget;
-
-    //List of players to update
 
     public static BiFunction<Team, UpdateTeamRequest, Team> dtoToEntityUpdater(){
         return (team, request) -> {

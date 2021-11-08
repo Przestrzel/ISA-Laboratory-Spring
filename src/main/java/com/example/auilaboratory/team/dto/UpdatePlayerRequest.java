@@ -23,8 +23,6 @@ public class UpdatePlayerRequest {
 
     private String nationality;
 
-    //Maybe add team updateable
-
     public static BiFunction<Player, UpdatePlayerRequest, Player> dtoToEntityUpdater(){
         return (player, request) -> {
             player.setFullName(request.getFullName());
