@@ -18,13 +18,9 @@ import java.util.function.Supplier;
 public class CreateTeamRequest {
     private String name;
 
-    private double budget;
-
     public static Function<CreateTeamRequest, Team> dtoToEntityMapper(){
         return request -> Team.builder()
                 .name(request.getName())
-                .budget(request.getBudget())
-                .players(List.of())
                 .build();
     }
 }

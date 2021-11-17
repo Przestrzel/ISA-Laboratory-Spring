@@ -26,21 +26,6 @@ public class TeamController {
         this.teamService = teamService;
     }
 
-    @GetMapping
-    public ResponseEntity<GetTeamsResponse> getTeams() {
-        List<Team> allTeams = teamService.findAll();
-        Function<Collection<Team>, GetTeamsResponse> mapper = GetTeamsResponse.entityToDtoMapper();
-        GetTeamsResponse response = mapper.apply(allTeams);
-        return ResponseEntity.ok(response);
-    }
-
-    @GetMapping("{name}")
-    public ResponseEntity<GetTeamResponse> getTeam(@PathVariable("name") String name){
-        return teamService.find(name)
-                .map(value -> ResponseEntity.ok(GetTeamResponse.entityToDtoMapper().apply(value)))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
     @PostMapping
     public ResponseEntity<Void> createTeam(@RequestBody CreateTeamRequest request, UriComponentsBuilder builder) {
         Team team = CreateTeamRequest
@@ -59,18 +44,6 @@ public class TeamController {
             teamService.delete(team.get());
             return ResponseEntity.accepted().build();
         } else{
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    @PutMapping("{name}")
-    public ResponseEntity<Void> updateTeam(@RequestBody UpdateTeamRequest request, @PathVariable("name") String name){
-        Optional<Team> team = teamService.find(name);
-        if(team.isPresent()){
-            UpdateTeamRequest.dtoToEntityUpdater().apply(team.get(), request);
-            teamService.update(team.get());
-            return ResponseEntity.accepted().build();
-        } else {
             return ResponseEntity.notFound().build();
         }
     }

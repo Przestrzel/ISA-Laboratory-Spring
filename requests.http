@@ -1,12 +1,12 @@
-GET http://localhost:8080/api/players
+GET http://localhost:8082/api/players
 
 ###
 
-GET http://localhost:8080/api/players/cca2a08c-9c7e-494b-abe3-743b52e4f585
+GET http://localhost:8082/api/players/747372fd-1d87-4d58-be20-247c93a34d15
 
 ###
 
-POST http://localhost:8080/api/players
+POST http://localhost:8082/api/players
 Content-Type: application/json
 
 {
@@ -22,11 +22,11 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/players/123f69ca-1782-4a22-83b9-017110e7d5f6
+DELETE http://localhost:8082/api/players/8ff1bfa9-f64d-4759-9535-85e7e24b9a3d
 
 ###
 
-PUT http://localhost:8080/api/players/cca2a08c-9c7e-494b-abe3-743b52e4f585
+PUT http://localhost:8082/api/players/747372fd-1d87-4d58-be20-247c93a34d15
 Content-Type: application/json
 
 {
@@ -39,15 +39,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/api/teams
-
-###
-
-GET http://localhost:8080/api/teams/NewTeam
-
-###
-
-POST http://localhost:8080/api/teams
+POST http://localhost:8082/api/teams
 Content-Type: application/json
 
 {
@@ -57,28 +49,19 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/teams/First team
+DELETE http://localhost:8082/api/teams/NewTeam
 
 ###
 
-PUT http://localhost:8080/api/teams/NewTeam
-Content-Type: application/json
-
-{
-  "budget": 99999999
-}
+GET http://localhost:8082/api/teams/NewTeam/players
 
 ###
 
-GET http://localhost:8080/api/teams/NewTeam/players
+GET http://localhost:8082/api/teams/NewTeam/players/311f7440-01a4-4b79-9c28-45492b19e42f
 
 ###
 
-GET http://localhost:8080/api/teams/NewTeam/players/f833347f-243e-4e46-8f43-5364acae615f
-
-###
-
-POST http://localhost:8080/api/teams/NewTeam/players
+POST http://localhost:8082/api/teams/NewTeam/players
 Content-Type: application/json
 
 {
@@ -94,11 +77,11 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
+DELETE http://localhost:8082/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
 
 ###
 
-PUT http://localhost:8080/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
+PUT http://localhost:8082/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
 Content-Type: application/json
 
 {
