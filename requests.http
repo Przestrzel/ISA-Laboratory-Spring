@@ -2,7 +2,7 @@ GET http://localhost:8080/api/players
 
 ###
 
-GET http://localhost:8080/api/players/cca2a08c-9c7e-494b-abe3-743b52e4f585
+GET http://localhost:8080/api/players/7af085cd-a7f1-4be9-a18a-3f6e98c9a7a9
 
 ###
 
@@ -22,11 +22,11 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/players/123f69ca-1782-4a22-83b9-017110e7d5f6
+DELETE http://localhost:8080/api/players/5faf4c79-f538-4c8f-90b5-91be74ecde3d
 
 ###
 
-PUT http://localhost:8080/api/players/cca2a08c-9c7e-494b-abe3-743b52e4f585
+PUT http://localhost:8080/api/players/3c00e180-c97d-4642-aa97-7e2c4c97c788
 Content-Type: application/json
 
 {
@@ -70,15 +70,15 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/api/teams/NewTeam/players
+GET http://localhost:8080/api/teams/First team/players
 
 ###
 
-GET http://localhost:8080/api/teams/NewTeam/players/f833347f-243e-4e46-8f43-5364acae615f
+GET http://localhost:8080/api/teams/First team/players/6be14229-f5f6-48b1-a6aa-f4fafa24e443
 
 ###
 
-POST http://localhost:8080/api/teams/NewTeam/players
+POST http://localhost:8080/api/teams/First team/players
 Content-Type: application/json
 
 {
@@ -87,18 +87,18 @@ Content-Type: application/json
   "height": 1.85,
   "weight": 80,
   "position": "Striker",
-  "value": 828282,
+  "value": 828282.0,
   "nationality": "Poland",
-  "teamName": "NewTeam"
+  "teamName": "First team"
 }
 
 ###
 
-DELETE http://localhost:8080/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
+DELETE http://localhost:8080/api/teams/First team/players/3f1adabb-2db5-4ab7-9c6a-d10639f44c62
 
 ###
 
-PUT http://localhost:8080/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
+PUT http://localhost:8080/api/teams/First team/players/3fd18e59-29a7-4a67-921d-659f470fac6d
 Content-Type: application/json
 
 {
