@@ -1,6 +1,5 @@
 package com.example.auilaboratory.team.dto;
 
-import com.example.auilaboratory.team.entity.Player;
 import lombok.*;
 
 import java.util.Collection;

@@ -1,7 +1,6 @@
 package com.example.auilaboratory.team.dto;
 
 
-import com.example.auilaboratory.team.entity.Player;
 import com.example.auilaboratory.team.entity.Team;
 import lombok.*;
 

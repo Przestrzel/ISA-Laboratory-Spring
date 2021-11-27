@@ -2,7 +2,6 @@ package com.example.auilaboratory.team.controller;
 
 import com.example.auilaboratory.team.dto.*;
 import com.example.auilaboratory.team.entity.Team;
-import com.example.auilaboratory.team.service.PlayerService;
 import com.example.auilaboratory.team.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +16,10 @@ import java.util.function.Function;
 @RestController
 @RequestMapping("api/teams")
 public class TeamController {
-    private PlayerService playerService;
     private TeamService teamService;
 
     @Autowired
-    public TeamController(PlayerService playerService, TeamService teamService) {
-        this.playerService = playerService;
+    public TeamController(TeamService teamService) {
         this.teamService = teamService;
     }
 
@@ -46,8 +43,7 @@ public class TeamController {
         Team team = CreateTeamRequest
                 .dtoToEntityMapper()
                 .apply(request);
-        team = teamService.save(team);
-
+        teamService.save(team);
         return ResponseEntity.created(builder.pathSegment("api", "teams", "{name}")
                 .buildAndExpand(team.getName()).toUri()).build();
     }

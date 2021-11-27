@@ -5,7 +5,6 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Getter
 @Setter
@@ -24,9 +23,6 @@ public class Team implements Serializable {
     private String name;
 
     private double budget;
-
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
-    private List<Player> players;
 
     @Override
     public String toString() {

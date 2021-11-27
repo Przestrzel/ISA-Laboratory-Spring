@@ -1,53 +1,12 @@
-GET http://localhost:8080/api/players
+GET http://localhost:8081/api/teams
 
 ###
 
-GET http://localhost:8080/api/players/cca2a08c-9c7e-494b-abe3-743b52e4f585
+GET http://localhost:8081/api/teams/First team
 
 ###
 
-POST http://localhost:8080/api/players
-Content-Type: application/json
-
-{
-  "fullName": "Andrzej",
-  "age": 20,
-  "height": 1.85,
-  "weight": 80,
-  "position": "Striker",
-  "value": 828282,
-  "nationality": "Poland",
-  "teamName": "First team"
-}
-
-###
-
-DELETE http://localhost:8080/api/players/123f69ca-1782-4a22-83b9-017110e7d5f6
-
-###
-
-PUT http://localhost:8080/api/players/cca2a08c-9c7e-494b-abe3-743b52e4f585
-Content-Type: application/json
-
-{
-  "fullName": "Andrzej Dodany",
-  "age": 40,
-  "position": "Midfielder",
-  "value": 444222,
-  "nationality": "Poland"
-}
-
-###
-
-GET http://localhost:8080/api/teams
-
-###
-
-GET http://localhost:8080/api/teams/NewTeam
-
-###
-
-POST http://localhost:8080/api/teams
+POST http://localhost:8081/api/teams
 Content-Type: application/json
 
 {
@@ -57,54 +16,13 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/teams/First team
+DELETE http://localhost:8081/api/teams/NewTeam
 
 ###
 
-PUT http://localhost:8080/api/teams/NewTeam
+PUT http://localhost:8081/api/teams/NewTeam
 Content-Type: application/json
 
 {
   "budget": 99999999
-}
-
-###
-
-GET http://localhost:8080/api/teams/NewTeam/players
-
-###
-
-GET http://localhost:8080/api/teams/NewTeam/players/f833347f-243e-4e46-8f43-5364acae615f
-
-###
-
-POST http://localhost:8080/api/teams/NewTeam/players
-Content-Type: application/json
-
-{
-  "fullName": "Andrzej",
-  "age": 20,
-  "height": 1.85,
-  "weight": 80,
-  "position": "Striker",
-  "value": 828282,
-  "nationality": "Poland",
-  "teamName": "NewTeam"
-}
-
-###
-
-DELETE http://localhost:8080/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
-
-###
-
-PUT http://localhost:8080/api/teams/First team/players/2ea2918c-fe83-460e-b3b7-1e4fdf48fe99
-Content-Type: application/json
-
-{
-  "fullName": "Andrzej Jakis",
-  "age": 40,
-  "position": "Midfielder",
-  "value": 444222,
-  "nationality": "Poland"
 }

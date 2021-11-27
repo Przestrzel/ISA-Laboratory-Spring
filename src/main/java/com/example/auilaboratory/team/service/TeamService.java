@@ -1,6 +1,7 @@
 package com.example.auilaboratory.team.service;
 
 import com.example.auilaboratory.team.entity.Team;
+import com.example.auilaboratory.team.event.repository.TeamEventRepository;
 import com.example.auilaboratory.team.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,9 +14,12 @@ import java.util.Optional;
 public class TeamService {
     private TeamRepository repository;
 
+    private TeamEventRepository teamEventRepository;
+
     @Autowired
-    public TeamService(TeamRepository repository){
+    public TeamService(TeamRepository repository, TeamEventRepository teamEventRepository){
         this.repository = repository;
+        this.teamEventRepository = teamEventRepository;
     }
 
     public Optional<Team> find(String name) {
@@ -27,13 +31,15 @@ public class TeamService {
     }
 
     @Transactional
-    public Team save(Team team) {
-        return repository.save(team);
+    public void save(Team team) {
+        repository.save(team);
+        teamEventRepository.create(team);
     }
 
     @Transactional
     public void delete(Team team) {
         repository.delete(team);
+        teamEventRepository.delete(team);
     }
 
     @Transactional
